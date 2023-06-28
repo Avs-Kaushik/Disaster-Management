@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="static/img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="static/lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="static/lib/animate/animate.min.css" rel="stylesheet">
+        <link href="static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="static/css/style.css" rel="stylesheet">
+        <style>
+             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+            *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        label{
+            color: white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bxx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bxx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: black;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .ok4{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bxx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bxx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bxx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="bxx bxx1"><img src="static/logo.png" width="100%" alt=""></div>
+            <div class="bxx bxx2">
+                <div class="cont">
+                    <a href="/home" class="ok ok1">Home</a>
+                    <a href="/blood_req" class="ok ok3">Blood Requirement</a>
+                    <a href="/disasters" class="ok ok4">Disasters</a>
+                    <a href="/logout" class="ok ok5">Logout</a>
+                </div>
+            </div>
+            <div class="bxx bxx3">
+                <a href="/disasters" id="id1">Donate</a>
+                <a href="/volunteer" id="id2">Volunteer</a>
+            </div>
+        </header>
+
+        <!-- Video Modal Start-->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>        
+                        <!-- 16:9 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- Video Modal End -->
+        
+
+        <!-- About Start -->
+        <div class="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-img" data-parallax="scroll" data-image-src="static/img/about.jpg"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-header">
+                            <p>Learn About Us</p>
+                            <h2>Worldwide non-profit Disaster management Organization</h2>
+                        </div>
+                        <div class="about-tab">
+                            <ul class="nav nav-pills nav-justified">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#tab-content-1">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#tab-content-2">Mission</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#tab-content-3">Vision</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="tab-content-1" class="container tab-pane active">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis. Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+                                <div id="tab-content-2" class="container tab-pane fade">
+                                    Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+                                <div id="tab-content-3" class="container tab-pane fade">
+                                    Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Service Start -->
+        <div class="service">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>What We Do?</p>
+                    <h2>We believe that we can save more lifes with you</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-diet"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Healthy Food</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-water"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Pure Water</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-healthcare"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Health Care</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-education"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Primary Education</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-home"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Residence Facilities</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="flaticon-social-care"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Social Care</h3>
+                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+        
+        
+        <!-- Facts Start -->
+        <div class="facts" data-parallax="scroll" data-image-src="static/img/facts.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-home"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-plus" data-toggle="counter-up">150</h3>
+                                <p>Countries</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-charity"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-plus" data-toggle="counter-up">400</h3>
+                                <p>Volunteers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-kindness"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-dollar" data-toggle="counter-up">10000</h3>
+                                <p>Our Goal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-donation"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-dollar" data-toggle="counter-up">5000</h3>
+                                <p>Raised</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Facts End -->
+        
+        
+        <!-- Causes Start -->
+        <div class="causes">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Popular Causes</p>
+                    <h2>Let's know about charity causes around the world</h2>
+                </div>
+                <div class="owl-carousel causes-carousel">
+                    <div class="causes-item">
+                        <div class="causes-img">
+                            <img src="static/img/causes-1.jpg" alt="Image">
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                                    <span>65%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> $10000</p>
+                                <p><strong>Goal:</strong> $5000</p>
+                            </div>
+                        </div>
+                        <div class="causes-text">
+                            <h3>Odisha train collision</h3>
+                            <p>On 2 June 2023, three trains collided in Balasore district, in the state of Odisha in eastern India for Cormandal express</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>
+                        </div>
+                    </div>
+                    <div class="causes-item">
+                        <div class="causes-img">
+                            <img src="static/img/causes-2.jpg" alt="Image">
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="47" aria-valuemin="0" aria-valuemax="100">
+                                    <span>47%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> $90000</p>
+                                <p><strong>Goal:</strong> $5000</p>
+                            </div>
+                        </div>
+                        <div class="causes-text">
+                            <h3>Badakhshan earthquake</h3>
+                            <p>On 21 March 2023, a magnitude 6.5 earthquake struck Badakhshan Province, Afghanistan, with an intermediate depth of approximately 187 km (116 mi)</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>
+                        </div>
+                    </div>
+                    <div class="causes-item">
+                        <div class="causes-img">
+                            <img src="static/img/causes-3.jpg" alt="Image">
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                    <span>85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> $100000</p>
+                                <p><strong>Goal:</strong> $50000</p>
+                            </div>
+                        </div>
+                        <div class="causes-text">
+                            <h3>Ludhiana gas leak disaster</h3>
+                            <p>On 30 April 2023, eleven people were killed and nine others were hospitalised when a gas leak occurred in Ludhiana, Punjab, India.</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>
+                        </div>
+                    </div>
+                    <div class="causes-item">
+                        <div class="causes-img">
+                            <img src="static/img/causes-4.jpg" alt="Image">
+                        </div>
+                        <div class="causes-progress">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                    <span>20%</span>
+                                </div>
+                            </div>
+                            <div class="progress-text">
+                                <p><strong>Raised:</strong> $99000</p>
+                                <p><strong>Goal:</strong> $8000</p>
+                            </div>
+                        </div>
+                        <div class="causes-text">
+                            <h3>Lorem ipsum dolor sit</h3>
+                            <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
+                        </div>
+                        <div class="causes-btn">
+                            <a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Causes End -->
+        
+        
+        <!-- Donate Start -->
+        <div class="donate" data-parallax="scroll" data-image-src="static/img/donate.jpg">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="donate-content">
+                            <div class="section-header">
+                                <p>Donate Now</p>
+                                <h2>Let's donate to needy people for better lives</h2>
+                            </div>
+                            <div class="donate-text">
+                                <p>
+                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="donate-form">
+                            <form>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Name" required="required" />
+                                </div>
+                                <div class="control-group">
+                                    <input type="email" class="form-control" placeholder="Email" required="required" />
+                                </div>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-custom active">
+                                        <input type="radio" name="options" checked> $10
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $20
+                                    </label>
+                                    <label class="btn btn-custom">
+                                        <input type="radio" name="options"> $30
+                                    </label>
+                                </div>
+                                <div>
+                                    <button class="btn btn-custom" type="submit">Donate Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Donate End -->
+        
+        
+        <!-- Event Start -->
+        <div class="event">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Upcoming Events</p>
+                    <h2>Be ready for our upcoming events on Disaster management</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="event-item">
+                            <img src="static/img/event-1.jpg" alt="Image">
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
+                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>New York</p>
+                                </div>
+                                <div class="event-text">
+                                    <h3>Lorem ipsum dolor sit</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                    </p>
+                                    <a class="btn btn-custom" href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="event-item">
+                            <img src="static/img/event-2.jpg" alt="Image">
+                            <div class="event-content">
+                                <div class="event-meta">
+                                    <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
+                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
+                                    <p><i class="fa fa-map-marker-alt"></i>New York</p>
+                                </div>
+                                <div class="event-text">
+                                    <h3>Lorem ipsum dolor sit</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
+                                    </p>
+                                    <a class="btn btn-custom" href="">Join Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Event End -->
+        
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+            <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="static/lib/easing/easing.min.js"></script>
+        <script src="static/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="static/lib/waypoints/waypoints.min.js"></script>
+        <script src="static/lib/counterup/counterup.min.js"></script>
+        <script src="static/lib/parallax/parallax.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="static/mail/jqBootstrapValidation.min.js"></script>
+        <script src="static/mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="static/js/main.js"></script>
+    </body>
+</html>

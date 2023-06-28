@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: rgb(224,224,224);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .left-section {
+      position: relative;
+      width: 33%;
+      height: 100vh;
+      background-color: rgba(192, 192, 192, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(192, 192, 192, 0.8),
+                  0 0 30px rgba(192, 192, 192, 0.6),
+                  0 0 40px rgba(192, 192, 192, 0.4),
+                  0 0 50px rgba(192, 192, 192, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .shine-effect {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(192, 192, 192, 0.5) 100%);
+      z-index: 2;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 10px rgba(192, 192, 192, 0.8) inset;
+      border-radius: 20px;
+    }
+    
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to left, transparent, rgba(192, 192, 192, 0.2) 5%, rgba(192, 192, 192, 0.2) 95%, transparent);
+      mix-blend-mode: overlay;
+      border-radius: 20px;
+    }
+    
+    #videoElement {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scaleX(-1);
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      opacity: 0.5;
+      z-index: 1;
+      border-radius: 20px;
+    }
+    
+    .left-section:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://img.freepik.com/free-photo/silver-shimmery-paper-background_53876-71385.jpg?w=360');
+      background-size: cover;
+      mix-blend-mode: multiply;
+      opacity: 0.2;
+      z-index: 3;
+    }
+    
+    
+    .form-overlay {
+      position: relative;
+      width: 80%;
+      max-width: 400px;
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 20px;
+      z-index: 4;
+    }
+    
+    .form-overlay form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-overlay label
+     {
+      
+      display: block;
+      color: white;
+      border: 1px black;
+      border: #ccc;
+      font-size: larger;
+      margin-bottom : 10px;
+    }
+    .form-overlay input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-section" id="ripple">
+    <div class="shine-effect"></div>
+    <div class="video-overlay"></div>
+    <video id="videoElement" autoplay></video>
+    <div class="form-overlay">
+      <form>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        
+        <label for="contactInfo">Contact Information:</label>
+        <input type="text" id="contactInfo" name="contactInfo" required>
+        
+        <label for="availability">Availability:</label>
+        <input type="text" id="availability" name="availability" required>
+        
+        <label for="skillsInterests">Skills or Interests:</label>
+        <input type="text" id="skillsInterests" name="skillsInterests" required>
+        
+        <label for="emergencyContactName">Emergency Contact Name:</label>
+        <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+        
+        <label for="emergencyContactNumber">Emergency Contact Number:</label>
+        <input type="text" id="emergencyContactNumber" name="emergencyContactNumber" required>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+ 
+  <script>
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(function(stream) {
+        var video = document.getElementById('videoElement');
+        video.srcObject = stream;
+      })
+      .catch(function(error) {
+        console.error('Error accessing webcam:', error);
+      });
+  </script>
+</body>
+</html>

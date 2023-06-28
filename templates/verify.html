@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+      </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            color: white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url("static/disaster.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bxx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bxx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: #fff;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bxx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bxx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bxx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .login{
+            background-color:#9c9374;
+            font-size: 18px;
+            font-family: 'Space Grotesk', sans-serif;
+            width:91%;
+            margin-left:3.2%;
+            border-radius:10px;
+            margin-top:5%;
+            border: 0px;
+            padding: 5px;
+        }
+        .login:hover{
+            box-shadow: 1px 3px 18px rgba(0,0,0,0.3);
+            cursor:pointer;
+        }
+        .login:hover{
+            color: white;
+        }
+        .input{
+            width:90%;
+            height:30px;
+            border:0.5px solid black;
+            border-radius:5px;
+            margin:2%;
+            padding:3px;
+            margin-left:3%;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .lab{
+            margin-left:3%;
+            font-size:20px;
+        }
+        .out{
+            margin:0.5%;
+            border-radius:10px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            min-height:100vh;
+        }
+        .bx2{
+            box-shadow: 1px 3px 18px rgba(0,0,0,0.3);
+            border-radius:20px;
+            background-color: #01aae3;
+            margin:1%;
+            padding:20px;
+            flex:1;
+            padding:20px;
+            margin-left: 30%;
+            margin-right: 30%;
+            width:450px;
+            height:130px;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,.5);
+            transition: height .2s ease;
+             overflow: hidden;
+        }
+        .bx2.active{
+            height:750px;
+        }
+        body{
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bxx bxx1"><img src="static/logo.png" width="100%" alt=""></div>
+        <div class="bxx bxx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="" class="ok ok3">Blood Requirement</a>
+                <a href="" class="ok ok4">Disasters</a>
+                <a href="" class="ok ok5">About US</a>
+            </div>
+        </div>
+        <div class="bxx bxx3">
+            <a href="" id="id1">Donate</a>
+            <a href="" id="id2">Volunteer</a>
+        </div>
+    </header>
+    <div class="out">
+        <div class="bx2">
+            <form action="/verification" method="POST">
+                <h2 align="center">Enter Your OTP</h2>
+                <input type="hidden" value="{{mobile}}" name="mobile">
+                <input type="hidden" value="{{email}}" name="email">
+                <input type="hidden" value="{{gender}}" name="gender">
+                <input type="hidden" value="{{blood}}" name="blood">
+                <input type="hidden" value="{{dob}}" name="dob">
+                <input type="hidden" value="{{address}}" name="address">
+                <input type="hidden" value="{{password}}" name="password">
+                <input type="hidden" value="{{name}}" name="name">
+                <input class="input" name="code" type="text" required>
+                <input class="login" type="submit" name="submit" value="Verify">
+            </form>
+            </div>
+    </div>  
+</body>
+</html>

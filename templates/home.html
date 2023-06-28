@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+      </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background-color:#E8F6EF ;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: #4C4C6D;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .video{
+            margin-top: 2%;
+            background-color: #f7e4cc;
+            display: flex;
+        }
+        .ol{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .or{
+            flex: 1;
+        }
+        .services{
+            width: 100%;
+            display: flex;
+            height: 80vh;
+        }
+        .services .left{
+            flex:1;
+            background-color: #a83d35;
+            font-size: 3em;
+        }
+        .services .right{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+        }
+        .services .right .top{
+            display: flex;
+            height: 40vh;
+        }
+        .services .right .top .tl{
+            flex: 1;
+            background-color: #1a1e22;
+        }
+        .services .right .top .tr{
+            flex: 1;
+            background-color: #303438;
+        }
+        .services .right .bottom{
+            display: flex;
+            height: 40vh;
+        }
+        
+        .services .right .bottom .bl{
+            flex: 1;
+            background-color: #303438;
+        }
+        .services .right .bottom .br{
+            flex: 1;
+            background-color: #1a1e22;
+        }
+        .cen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            color: white;
+        }
+        .cen:hover{
+            background-color: #bb5149;
+        }
+        .card{
+            margin: 3%;
+            padding: 5px;
+        }
+        #tags{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .world
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .ct{
+            flex: 1;
+        }
+        .mad{
+            position: relative;
+            display: flex;
+        }
+        .mad img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .sample
+        {
+            height: 120vh;
+        }
+        .ok1{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            background-color: #f0f2f5;
+        }
+        .ok1:a{
+            color: green;
+        }
+        .ct1{
+            display: flex;
+            flex-direction: column;
+        }
+        .show{
+            flex: 1;
+            margin: 3%;
+            padding: 10px;
+            height: 10vh;
+            border-radius: 6px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 0.3s ease-in-out;
+        }
+        .show:hover{
+            background-color: #bb5149;
+            color: white;
+        }
+        #btn{
+            border-radius: 10px;
+            background-color: #F99B7D;
+            border: 0px;
+            font-size: larger;
+            padding: 7px;
+            margin: 2%;
+            transition: all 0.2s ease-in-out;
+        }
+        #btn:hover{
+            transform: scale(1.09);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bx bx1"><img src="static/logo.png" width="100%" alt=""></div>
+        <div class="bx bx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="/blood_req" class="ok ok3">Blood Requirement</a>
+                <a href="/disasters" class="ok ok4">Disasters</a>
+                <a href="/logout" class="ok ok5">Logout</a>
+            </div>
+        </div>
+        <div class="bx bx3">
+            <a href="/disasters" id="id1">Donate</a>
+            <a href="/volunteer" id="id2">Volunteer</a>
+        </div>
+    </header>
+    <main>
+        <div class="mad">
+            <img width="100%" src="static/collapse.jpg" alt="other">
+            <img id="guys" style="margin-top: -5%;margin-left: 50%;" width="30%" src="static/fall.png" alt="other">
+            <img id="fall-guys" style="margin-top: -3%;margin-left: 10%;" width="30%" src="static/fall-guys.png" alt="other">
+        </div>
+            <div class="sample">
+
+            </div>
+            <h1 align="center">Prepare Today.   Survive Tommorow</h1>
+        <div class="video">
+            <div class="ol">
+                <h1>Various Types of Disasters</h1>
+                <div class="contain">
+                    <ul>
+                        <li><b>Earthquakes</b>: Sudden ground shaking caused by tectonic activity.</li>
+                        <li><b>Floods</b>: Overflow of water onto normally dry land.</li>
+                        <li><b>Hurricanes</b>: Powerful tropical storms with strong winds and heavy rainfall.</li>
+                        <li><b>Wildfires</b>: Uncontrolled fires that spread rapidly through vegetation.</li>
+                        <li><b>Tornadoes</b>: Violent rotating columns of air that can cause severe damage.</li>
+                        <li><b>Tsunamis</b>: Large ocean waves triggered by undersea disturbances.</li>
+                        <li><b>Drought</b>: Prolonged period of abnormally dry weather leading to water scarcity.</li>
+                        <li><b>Winter Storms</b>: Severe weather events with snow, ice, and freezing temperatures.</li>
+                        <li><b>Landslides</b>: Downward movement of rocks, soil, or debris on slopes.</li>
+                        <li><b>Industrial Accidents</b>: Disasters resulting from accidents in industrial facilities.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="or">
+                <img id="render" src="static/render.jpg" width="100%" alt="">
+            </div>
+        </div>
+        <div class="services">
+            <div class="cen left">
+                What We Do?
+            </div>
+            <div class="right">
+                <div class="top">
+                    <div class="cen tl">
+                        <div class="card">
+                        <div class="here" id="tags">
+                        <img src="static/siren.png" width="20%" alt="">
+                    </div>
+                        <h2 align="center">Emergency Responce</h2>
+                        <p style="color: #f0f2f5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis?</p>
+                    </div>
+                    </div>
+                    <div class="cen tr">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/team.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Join Hands</h2>
+                            <p style="color: #f0f2f5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="cen bl">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/first-aid-box.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Medical Aid</h2>
+                            <p style="color: #f0f2f5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis?</p>
+                        </div>
+                    </div>
+                    <div class="cen br">
+                        <div class="card">
+                            <div class="here" id="tags">
+                            <img src="static/home.png" width="20%" alt="">
+                        </div>
+                            <h2 align="center">Love For Humanity</h2>
+                            <p style="color: #f0f2f5;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h1 align="center">Successful Projects</h1>
+        <div class="world">
+            <div class="ct ct1">
+                <div class="show">
+                    <div class="data">
+                        <h2 align="center">Wildfire Protection</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eius.</p>
+                    </div>
+                    <button id="btn">Explore More</button>
+                </div>
+                <div class="show">
+                    <div class="data">
+                        <h2 align="center">EarthQuake Relif</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eius.</p>
+                    </div>
+                    <button id="btn">Explore More</button>
+                </div>
+                <div class="show">
+                    <div class="data">
+                        <h2 align="center">Hurricane Protection</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, eius.</p>
+                    </div>
+                    <button id="btn">Explore More</button>
+                </div>
+            </div>
+            <div class="ct ct2"><img src="static/globe.png" width="100%" alt=""></div>
+        </div>
+    </main>
+    <footer>
+        <h3 align="center">&copy; 2023 Res-Q-Zone. All rights reserved.</h3>
+    </footer>
+</body>
+<script>
+    let k=document.getElementById("guys");
+    let k1=document.getElementById("fall-guys");
+    let k2=document.getElementById("render");
+    window.addEventListener("scroll",()=>{
+        let p=window.scrollY;
+        k.style.marginTop=p*0.2 + "px";
+        k.style.left=p*0.3 + "px";
+        k1.style.marginTop=p*0.4 + "px";
+        k2.style.marginLeft=p*0.1 + "px";
+    });
+</script>
+</html>

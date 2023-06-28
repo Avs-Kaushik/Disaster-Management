@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+      </style>
+      <script src="https://unpkg.com/scrollreveal@4"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        label{
+            color: white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url("static/disaster.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .bxx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bxx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: #fff;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bxx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bxx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bxx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .login{
+            background-color:#9c9374;
+            font-size: 18px;
+            font-family: 'Space Grotesk', sans-serif;
+            width:91%;
+            margin-left:3.2%;
+            border-radius:10px;
+            margin-top:5%;
+            border: 0px;
+            padding: 5px;
+        }
+        .login:hover{
+            box-shadow: 1px 3px 18px rgba(0,0,0,0.3);
+            cursor:pointer;
+        }
+        .login:hover{
+            color: white;
+        }
+        .input{
+            width:90%;
+            height:30px;
+            border:0.5px solid black;
+            border-radius:5px;
+            margin:2%;
+            padding:3px;
+            margin-left:3%;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .lab{
+            margin-left:3%;
+            font-size:20px;
+        }
+        .out{
+            margin:0.5%;
+            border-radius:10px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            min-height:100vh;
+        }
+        .bx2{
+            box-shadow: 1px 3px 18px rgba(0,0,0,0.3);
+            border-radius:20px;
+            background-color: #01aae3;
+            margin:1%;
+            padding:20px;
+            flex:1;
+            padding:20px;
+            margin-left: 30%;
+            margin-right: 30%;
+            width:450px;
+            height:350px;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255,255,255,.5);
+            visibility: hidden;
+            transition: height .2s ease;
+             overflow: hidden;
+        }
+        .bx2.active{
+            height:750px;
+        }
+        .bx2 .form1{
+            transition: transform .18s ease;
+            transform: translateY(0);
+        }
+        .bx2.active .form1{
+            transition: none;
+            transform: translateY(-400px);
+        }
+        .bx2.active .form2{
+            transition: transform .18s ease;
+            transform: translateY(-360px);
+        }
+        body{
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .head{
+            padding:5px;
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+        }
+        .box{
+            margin:0.2%;
+            padding:5px;
+            background-color: white;
+        }
+        .box1{
+            flex:1;
+            padding:12px;
+            border-radius:35px 0px 35px 0px;
+            background-color: #e3effb;
+        }
+        .box2{
+            flex:6;
+            border-top-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            background-color: #7cc5e6;
+            margin-left: 45%;
+            height:50px;
+            width:100px;
+            margin-top:1.3%;
+        }
+        #ft{
+            font-family: 'EB Garamond';
+            margin:0.5%;
+            margin-left:1%;
+            font-size: 50px;
+            color:#6D2FD1;
+        }
+        #ft1{
+            font-family: 'EB Garamond';
+            margin:0.5%;
+            font-size: 50px;
+            color:black;
+        }
+        
+        .navi{
+            margin-top:-3.5%;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .na{
+            flex:1;
+            margin:3%;
+            padding:5px;
+            text-align: center;
+            cursor:pointer;
+            width:400px;
+            height:30px;
+            padding-top:20px;
+        }
+        .na:hover{
+            background-color:#F2F7A1;
+            color:black;
+            margin:3%;
+            padding:5px;
+            text-align: center;
+            cursor:pointer;
+            width:400px;
+            height:30px;
+            padding-top:20px;
+            border-radius:35px 0px 35px 0px;
+            box-shadow:1px 3px 18px rgba(255, 255, 255, 0.582);
+        }
+        #naa{
+            text-decoration:none;
+            color:black;
+            font-size:18px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .na:hover #naa{
+            color:black;
+        }
+        .na1{
+          background-color:#F2F7A1;
+            color:black;
+            margin:3%;
+            padding:5px;
+            text-align: center;
+            cursor:pointer;
+            width:400px;
+            height:30px;
+            padding-top:20px;
+            border-radius:35px 0px 35px 0px;
+            box-shadow:1px 3px 18px rgba(0,0,0,0.3);
+        }
+        .na1 #naa{
+            color:black;
+        }
+        .box1{
+            visibility: hidden;
+        }
+        .na{
+            visibility: hidden;
+        }
+        .bx2 .form2{
+            transform: translateY(400px);
+            transition: none;
+        }
+        header{
+            height:20vh;
+            margin-left: 2%;
+        }
+        nav{
+            display: flex;
+            flex-direction: row;
+        }
+        .l{            
+            flex: 1;
+        }
+        .r{
+            margin-top: 1%;
+            flex:10;
+            display: flex;
+            flex-direction: row-reverse;
+            height: 90%;
+        }
+        nav .r .tag{
+            padding: 12px;
+            margin: 2%;
+            text-align: center;
+            background-color: #6a5638;
+            border-radius: 5px;
+            transition: all 0.2s ease-out;
+        }
+        nav .tag a{
+            text-decoration: none;
+            color:#d6cbb7
+        }
+        nav .tag:hover{
+            cursor: pointer;
+            box-shadow: 1px 3px 18px rgba(0,0,0,0.3);
+            transform: none;
+        }
+        nav .tag:hover a{
+            color: white;
+        }
+        .form1{
+            margin-top: 5%;
+        }
+        .form2{
+            margin-top: 10%;
+        } 
+        form{
+            margin-top: 4%;
+        }  
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bxx bxx1"><img src="static/logo.png" width="100%" alt=""></div>
+        <div class="bxx bxx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="" class="ok ok3">Blood Requirement</a>
+                <a href="" class="ok ok4">Disasters</a>
+                <a href="" class="ok ok5">About US</a>
+            </div>
+        </div>
+        <div class="bxx bxx3">
+            <a href="" id="id1">Donate</a>
+            <a href="" id="id2">Volunteer</a>
+        </div>
+    </header>
+    <div class="out">
+        <div class="bx2">
+            <div class="form1">
+            <h1 style="margin-left:6%;font-family: 'IBM Plex Mono', monospace;color:#A5D7E8" align="center">Welcome</h1>
+            <hr>
+            <form action="/logverify" method="POST">
+                <label class="lab" for="">Email</label>
+                <input class="input" type="email" name="email" placeholder="Enter your Email" required>
+                <label class="lab" for="">Password</label>
+                <input class="input" type="password" name="pwd" placeholder="Enter your Password" required>
+                <input class="login" type="submit" name="submit" value="Log In">
+            </form>
+            <h4 align="center" style="color: #f0f2f5;">Didn't have an account?  <a class="reg-link" style="text-decoration:none;" href="#">Register</a></h4>
+            </div>
+        <div class="form2">
+            <h1 align="center" style="font-family: 'IBM Plex Mono', monospace;color:#A5D7E8">Discover <b style="color:#F6F1F1;">World!</b></h1>
+            <hr>
+            <form action="/register" method="POST">
+                <label class="lab" for="">Name</label>
+                <input class="input" name="name" type="text" placeholder="Enter your Name" required>
+                <label class="lab" for="">Email</label>
+                <input class="input" name="email" type="email" placeholder="Enter your Email" required>
+                <label class="lab" for="">Select Your Gender</label>
+                <br>
+                <select style="margin:1%;margin-left:3%;" name="gen">
+                    <option style="font-family: 'IBM Plex Mono'" value="male" selected>Male</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="female">Female</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="other">Other</option>
+                </select>
+                <br>
+                <label class="lab" for="">Your Blood Group</label>
+                <br>
+                <select style="margin:1%;margin-left:3%;" name="blood">
+                    <option style="font-family: 'IBM Plex Mono'" value="O+" selected>O+</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="O-">O-</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="A+">A+</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="A-">A-</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="B+">B+</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="B-">B-</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="AB+">AB+</option>
+                    <option style="font-family: 'IBM Plex Mono'" value="AB-">AB-</option>
+                </select>
+                <br>
+                <label class="lab" for="">Date Of Birth</label>
+                <input name="dob" class="input" type="date" placeholder="Enter your date Of Birth" required>
+                <label class="lab" for="">Address</label>
+                <textarea class="input" name="address" id="" cols="30" rows="10" placeholder="Enter Your address"></textarea>
+                <label class="lab" for="">Create Your Password</label>
+                <input name="pass" class="input" type="password" placeholder="Password" required>
+                <label class="lab" for="">Enter Your Mobile Number</label>
+                <input name="phoneno" class="input" type="text" placeholder="Your mobile number with country code (eg: +917075824426)" required>
+                <input class="login" type="submit" name="submit" value="Sign Up">
+            </form>
+            <h4 align="center" style="color: white;">Already have an account?  <a class="log-link" style="text-decoration:none;" href="#">Login</a></h4>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        const k=document.querySelector('.bx2');
+        const k1=document.querySelector('.log-link');
+        const k2=document.querySelector('.reg-link');
+        k2.addEventListener('click',()=>{
+            k.classList.add('active');
+        });
+        k1.addEventListener('click',()=>{
+            k.classList.remove('active');
+        });
+        ScrollReveal().reveal('.box1', { duration: 5000,reset:true});
+        ScrollReveal().reveal('.na', { interval: 400,reset:true});
+        ScrollReveal().reveal('.bx2',{ duration: 2000,reset:true});
+      </script>    
+</body>
+</html>

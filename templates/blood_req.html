@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+      </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        label{
+            color: white;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            background-color: #fff;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            
+        }
+        .bxx{
+            flex:1;
+            margin: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bxx2{
+            flex: 4;
+            display: block;
+        }
+        .cont a{
+            margin-right: 2%;
+            margin-left: 2%;
+            padding: 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            font-size: large;
+            color: black;
+        }
+        .cont a:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .ok3{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            transform: scale(1.02);
+            color: green;
+            background-color: #f0f2f5;
+        }
+        .bxx3{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .bxx3 a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            padding-left: 6px;
+            padding-right: 6px;
+            transition: all 0.3s ease-in-out;
+        }
+        #id1{
+            background-color: rgb(185, 31, 31);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+
+        }
+        #id2{
+            background-color: rgb(26, 24, 24);
+            padding: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            
+        }
+        .bxx3 a:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .cen .flow{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .cd{
+            width: 90%;
+            height: 90vh;
+        }
+        .cen .flow .left{
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cen .flow .right{
+            flex: 3;
+        }
+        .cen .flow .right img{
+            position: absolute;
+            top: 25%;
+            pointer-events: none;
+        }
+        .proc{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        .card{
+            flex: 1;
+            border-radius: 5px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            background-color: #f0f2f5;
+            margin: 3%;
+        }
+        .camp{
+            margin: 2%;
+            padding: 3px;
+        }
+        .camp h1{
+            font-size: 2em;
+        }
+        .camp p{
+            font-size: 1.5em;
+        }
+        .outer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .outer .inner{
+            margin: 2%;
+            margin-left: 4%;
+            margin-right: 4%;
+            flex: 1;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            border-radius: 7px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .inn{
+            margin: 0;
+            flex:1;
+        }
+        .inner .inner2{
+            box-shadow: none;
+        }
+        .card h2{
+            font-size: 1.4em;
+            padding: 4px;
+        }
+        .card p{
+            font-size: 1em;
+            padding: 4px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        li{
+            float: left;
+            margin: 2%;
+        }
+        .vol{
+            background-color: #ec4239cf;
+            height: 30vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .man img{
+            position: absolute;
+            pointer-events: none;
+        }
+        .block{
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            width: 60vh;
+            height: 35vh;
+            transition: 0.2s all ease-in-out;
+            background-color: #f0f2f5;
+        }
+        .block:hover{
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+        }
+        label{
+            color: black;
+        }
+        td{
+            margin: 5%;
+            font-size: large;
+        }
+        .bc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+        }
+        .requests{
+            background-color: #fff;
+            text-align: center;
+            border: 0px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            width: 140%;
+            padding: 7px;
+            border-radius: 7px;
+            font-size: large;
+            transition: all 0.3s ease-in-out;
+        }
+        .requests:hover{
+            background-color: rgb(150, 24, 24);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.3);
+            cursor: pointer;
+        }
+        .inn2{
+            padding: 10px;
+        }
+        .cent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cent a{
+            text-decoration: none;
+            padding: 10px;
+            margin: 2%;
+            border-radius: 8px;
+            box-shadow: 1px 3px 18px rgb(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease-in-out;
+        }
+        .cent a:hover{
+            padding-left: 40%;
+            padding-right: 40%;
+            background-color: blanchedalmond;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="bxx bxx1"><img src="static/logo.png" width="100%" alt=""></div>
+        <div class="bxx bxx2">
+            <div class="cont">
+                <a href="/home" class="ok ok1">Home</a>
+                <a href="/blood_req" class="ok ok3">Blood Requirement</a>
+                <a href="/disasters" class="ok ok4">Disasters</a>
+                <a href="/logout" class="ok ok5">Logout</a>
+            </div>
+        </div>
+        <div class="bxx bxx3">
+            <a href="/disasters" id="id1">Donate</a>
+            <a href="/volunteer" id="id2">Volunteer</a>
+        </div>
+    </header>
+    <main>
+        <div class="cen">
+            <div class="flow">
+                <div class="cd left">
+                    <div class="block" style="border-radius: 15px;">
+                        <h1 align="center">Request Blood</h1>
+                        <hr>
+                        <div class="bc">
+                    <form action="/req" method="post">
+                        <table cellspacing="2">
+                            <tr>
+                                <td>
+                        <input type="text" id="location" name="loc" readonly required>
+                    </td>
+                    <td>
+                        <button type="button" onclick="getLocation()">Get Location</button>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <label for="">Blood Type:</label>
+                    </td>
+                    <td>
+                        <select style="margin:1%;margin-left:3%;" name="blood">
+                            <option style="font-family: 'IBM Plex Mono'" value="O+" selected>O+</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="O-">O-</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="A+">A+</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="A-">A-</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="B+">B+</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="B-">B-</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="AB+">AB+</option>
+                            <option style="font-family: 'IBM Plex Mono'" value="AB-">AB-</option>
+                        </select>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td colspace="2" align="center">
+                        <input type="submit" name="submit" value="Request" class="requests">
+                    </td>
+                    </tr>
+                    </table>
+                    </form>
+                </div>
+                    </div>
+                </div>
+                <div class="cd right">
+                    <img src="static/1.png" width="2%" id="drop3" style="top: 520px;left: 838px;" alt="">
+                    <img src="static/1.png" width="5%" id="drop1" style="top: 510px;left: 820px" alt="">
+                    <img src="static/1.png" width="8%" id="drop2" style="top: 500px;left: 800px;" alt="">
+                    <img src="static/3.png" width="20%" style="left: 690px;top:30%" alt="">
+                    <img src="static/mani.png" width="30%" style="left: 180px;top:280px" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="proc">
+
+            <div class="card card1">
+                <img src="static/process_1.jpg" width="100%" alt="other">
+                <h2 align="center">1.Register</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, blanditiis facere dolor eligendi debitis voluptas mollitia doloremque ab corrupti deleniti.</p>
+            </div>
+            <div class="card card2">
+                <img src="static/process_2.jpg" width="100%" alt="other">
+                <h2 align="center">2.Request</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, blanditiis facere dolor eligendi debitis voluptas mollitia doloremque ab corrupti deleniti.</p>
+            </div>
+            <div class="card card3">
+                <img src="static/process_3.jpg" width="100%" alt="other">
+                <h2 align="center">3.Get Details</h2>
+                <p style="margin: 2%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi, blanditiis facere dolor eligendi debitis voluptas mollitia doloremque ab corrupti deleniti.</p>
+            </div>
+        </div>
+        <div class="camp">
+            <h1>OUR CAMPAIGNS</h1>
+            <hr width="20%" style="background-color: red;">
+            <br>
+            <p style="margin:2%;">Encourage new donors to join and continue to give blood. We have total sixty thousands donor centers and visit thousands of other venues on various occasions.
+            </p>
+            <div class="outer">
+                <div class="inner inner1">
+                    <div class="inn inn1">
+                        <img src="static/event_1.jpg" width="100%" alt="other">
+                    </div>
+                    <div class="inn inn2">
+                        <h1 align="center">Save Lives.</h1>
+                        <hr>
+                        <p style="font-size: medium;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque saepe autem eveniet corrupti neque enim nam, facilis possimus veniam asperiores architecto cupiditate corporis eum placeat quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ipsam.</p>
+                        <div class="cent">
+                            <a href="">Explore!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="inner inner2" style="box-shadow: none;">
+                    <img src="static/samp.png" width="70%" style="margin-left: 0px;" id="sci" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="vol">
+            <div class="data">
+            <h1 align="center" style="font-size: 2.4em;">WE HAVE BEEN HELPING PEOPLE SINCE 4 YEARS</h1>
+            <h3 align="center" style="font-size: 1.3em;">You can give blood at any of our blood donation venues all over the world. We have total sixty thousands donor centers and visit thousands of other venues on various occasions.
+            </h3>
+        </div>
+        </div>
+    </main>
+    <div class="man">
+        <img src="static/save.png" width="30%" id="save"  alt="">
+        <img src="static/man.png" width="30%" id="man" style="margin-left: 1020px;" alt="">
+    </div>
+</body>
+<script>
+    let p=document.getElementById("drop2");
+    let p1=document.getElementById("drop1");
+    let p2=document.getElementById("drop3");
+    let p3=document.getElementById("man");
+    let p4=document.getElementById("save");
+    let p5=document.getElementById("sci");
+    window.addEventListener("scroll",()=>{
+        let temp=window.scrollY;
+        p.style.top=(500+(temp*0.9))+"px";
+        p1.style.top=(510+(temp*0.7))+"px";
+        p2.style.top=(520+(temp*0.6))+"px";
+        p3.style.marginLeft=(1020-(temp*0.2))+"px";
+        p4.style.marginLeft=((temp*0.2))+"px";
+        p5.style.marginLeft=((temp*0.2))+"px";
+    });
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      const locationInput = document.getElementById("location");
+      locationInput.value = latitude + ", " + longitude;
+    }
+</script>
+<script>
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 2000,
+        reset:true
+    });
+    sr.reveal('.card',{interval:300});
+    sr.reveal('.outer',{interval:600,reset:false});
+        </script>
+</html>
